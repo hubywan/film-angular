@@ -1,0 +1,19 @@
+<div>
+    <div class="d-flex flex-column align-items-center mt-5">
+        <img src="https://static.tvmaze.com/images/tvm-header-logo.png" class="mb-5 img-home-logo">
+        <form name="showForm" (ngSubmit)="ricerca()">
+            <input type=" text" placeholder="cerca..." name="inputTitolo" [(ngModel)]="inputTitolo" class="input-width">
+        </form>
+    </div>
+    <div>
+        <div class="d-flex flex-wrap justify-content-center">
+            <div class="card m-1 bg-card rounded-0 custom-cursor" style="width: 18rem;" *ngFor="let show of shows" routerLink="/dettagli" (click)="viewDetail(show.show.id)">
+                <img class="card-img-top" [src]="show.show.image.original" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title text-white">{{ show.show.name }}</h5>
+                    <p class="card-text text-white">{{ show.show.rating.average }} ⭐</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
