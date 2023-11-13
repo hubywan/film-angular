@@ -1,26 +1,13 @@
 <div class="container flex-column">
     <h1>{{detail.name}}</h1>
-    <div class="d-flex flex-column flex-md-row">
-        <div class="d-flex flex flex-row">
-            <div col-3>
-                <img [src]="detail.image.original" class=" detail-img-width">
-            </div>
-            <div class="px-4 col-6">
-                <div [innerHTML]="detail.summary"></div>
-            </div>
+
+    <div>
+        <a class="m-1 btn btn-primary" (click)="openMainComponent()">MAIN</a>
+        <a class="m-1 btn btn-primary" (click)="openEpisodeComponent()">EPISODE</a>
+        <div *ngIf="showMainComponent">
+            <main-detail></main-detail>
         </div>
-        <div class="border p-1 col-12 col-md-3">
-            <h2>Show Info</h2>
-            <h3>Network: {{detail.network.name}}</h3>
-            <h3>Schedule: {{detail.schedule.days}}</h3>
-            <h3>Status: {{detail.status}}</h3>
-            <h3>Show Type: {{detail.type}}</h3>
-            <h3>Genres: {{detail.genres}}</h3>
-            <h3>Episodes ordered: </h3>
-            <h3>Created by: </h3>
-            <h3>Official site: <a href="http://www.amc.com/shows/breaking-bad">{{detail.officialSite}}</a></h3>
-
-
+        <div *ngIf="showEpisodeComponent">
+            <episode-detail></episode-detail>
         </div>
     </div>
-</div>

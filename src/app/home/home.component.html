@@ -7,7 +7,7 @@
     </div>
     <div>
         <div class="d-flex flex-wrap justify-content-center">
-            <div class="card m-1 bg-card rounded-0 custom-cursor" style="width: 18rem;" *ngFor="let show of shows" routerLink="/dettagli" (click)="viewDetail(show.show.id)">
+            <div class="card m-1 bg-card rounded-0 custom-cursor" style="width: 18rem;" *ngFor="let show of shows" (click)="viewDetail(show.show.id)">
                 <img class="card-img-top" [src]="show.show.image.original" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title text-white">{{ show.show.name }}</h5>

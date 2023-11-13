@@ -3,14 +3,13 @@ import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
-    selector: "detail-home",
-    templateUrl: "./detail.component.html",
-    styleUrls: ["./detail.component.css"],
+    selector: "main-detail",
+    templateUrl: "./main.component.html",
+    styleUrls: ["./main.component.css"],
 })
-export class DetailComponent {
+export class MainComponent {
     detail: any = {};
-    showMainComponent = true;
-    showEpisodeComponent = false;
+
     constructor(private http: HttpClient, private route: ActivatedRoute) {}
     ngOnInit(): void {
         this.route.paramMap.subscribe((params) => {
@@ -26,14 +25,5 @@ export class DetailComponent {
                     });
             }
         });
-    }
-    openMainComponent() {
-        this.showMainComponent = true;
-        this.showEpisodeComponent = false;
-    }
-
-    openEpisodeComponent() {
-        this.showEpisodeComponent = true;
-        this.showMainComponent = false;
     }
 }
